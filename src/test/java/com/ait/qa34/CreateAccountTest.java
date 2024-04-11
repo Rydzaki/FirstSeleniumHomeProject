@@ -1,7 +1,9 @@
 package com.ait.qa34;
 
 import com.webShop.data.UserData;
+import com.webShop.models.NewLogin;
 import com.webShop.models.User;
+import com.webShop.utils.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -24,21 +26,34 @@ public class CreateAccountTest extends BasePage {
     public void createAccountPositiveTest() {
 
         app.getUser().clickOnRegisterLink();
-        app.getUser().fillLoginRegisterForm();
+        app.getUser().fillLoginRegisterForm(new NewLogin().setName("Jo").setLastname("Biden").setEmail(UserData.EMAIL).setPassword(UserData.PASWORD).setConfirmPassword(UserData.PASWORD));
         app.getUser().clickOnRegisterButton();
         app.getUser().clickOnContinueButton();
-        Assert.assertTrue(app.getUser().isLoginPresent(By.className("account")));
+        Assert.assertTrue(app.getUser().isLoginPresent(By.className("account"), UserData.EMAIL));
+        app.getUser().clickOnSignOutButton();
     }
 
     @Test
     public void createAccountWithExistedNegativeTest() {
         app.getUser().clickOnRegisterLink();
-        app.getUser().fillLoginRegisterForm();
+        app.getUser().fillLoginRegisterForm(new NewLogin().setName("Jo").setLastname("Biden").setEmail(UserData.EMAIL).setPassword(UserData.PASWORD).setConfirmPassword(UserData.PASWORD));
         app.getUser().clickOnRegisterButton();
 
         Assert.assertTrue(app.getUser().isLoginPresentNegativeMessage());
 
         //app.getUser().print();
+    }
+
+    @Test(dataProvider = "addNewLoginFromCsvFile", dataProviderClass = DataProviders.class)
+    public void createAccountPositiveTestFromDataProviderWithCsvFile(NewLogin login){
+        app.getUser().clickOnRegisterLink();
+        app.getUser().fillLoginRegisterForm(login);
+        app.getUser().clickOnRegisterButton();
+        app.getUser().clickOnContinueButton();
+        Assert.assertTrue(app.getUser().isLoginPresent(By.className("account"), login.getEmail())); //isLoginPresent  isLoginCreated  "account"
+
+        app.getUser().clickOnSignOutButton();
+
     }
 }
 

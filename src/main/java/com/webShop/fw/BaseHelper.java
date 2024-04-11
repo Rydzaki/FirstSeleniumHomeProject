@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 import static java.awt.SystemColor.text;
@@ -51,14 +52,38 @@ public class BaseHelper {
         return !driver.findElements(By.cssSelector(".product")).isEmpty();
     }
 
-    public boolean isLoginPresent(By locator) {
+    public boolean isLoginPresent(By locator, String email) {
         WebElement element = driver.findElement(locator);
-        if (UserData.EMAIL.equals(element.getText())) {
+        if (email.equals(element.getText())) {
             return true;
         } else {
             return false;
         }
     }
+
+    //todo
+    // public boolean isLoginPresent(By locator) {
+    //        NewLogin login = new NewLogin();
+    //        WebElement element = driver.findElement(locator);
+    //        if (login.getEmail().equals(element.getText())) {
+    //            return true;
+    //        } else {
+    //            return false;
+    //        }
+    //    }
+
+//    public boolean isLoginCreated(String text) {
+//        List<WebElement> logins = ApplicationManager.driver.findElements(By.cssSelector("h2"));
+//
+//        driver.findElement(By.cssSelector())
+//
+//        for (WebElement element : logins) {
+//            if (element.getText().contains(text))
+//                return true;
+//        }
+//        return false;
+//    }
+
 
     public boolean isLoginPresentNegativeMessage() {
         if (driver.findElements(By.cssSelector(".validation-summary-errors li")).size() > 0) {
