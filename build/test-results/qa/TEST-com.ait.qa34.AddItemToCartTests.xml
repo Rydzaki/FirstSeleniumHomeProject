@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.qa34.AddItemToCartTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T17:20:07" hostname="SOUL" time="1.195">
+  <properties/>
+  <testcase name="addProductPositiveTest" classname="com.ait.qa34.AddItemToCartTests" time="1.195"/>
+  <system-out><![CDATA[19:20:06.090 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- Start test addProductPositiveTest
+19:20:09.556 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- PASSED addProductPositiveTest
+19:20:09.558 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- Stop test
+19:20:09.558 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- =============================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

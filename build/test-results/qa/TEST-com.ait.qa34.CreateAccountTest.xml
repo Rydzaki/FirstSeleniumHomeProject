@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.qa34.CreateAccountTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T17:20:20" hostname="SOUL" time="1.506">
+  <properties/>
+  <testcase name="createAccountWithExistedNegativeTest" classname="com.ait.qa34.CreateAccountTest" time="1.506"/>
+  <system-out><![CDATA[19:20:09.559 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- Start test createAccountWithExistedNegativeTest
+19:20:21.507 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- PASSED createAccountWithExistedNegativeTest
+19:20:21.507 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- Stop test
+19:20:21.507 [Test worker] INFO  com.ait.qa34.BasePage -%PARSER_ERROR[kvp]- =============================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
