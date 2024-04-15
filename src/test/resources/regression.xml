@@ -8,12 +8,12 @@
                     <exclude name=".*Negative.*"/>
                 </methods>
             </class>
+            <class name="com.ait.qa34.CreateAccountTest"/>
             <class name="com.ait.qa34.AddItemToCartTests">
                 <methods>
                     <exclude name=".*From.*"/>
                 </methods>
             </class>
-            <class name="com.ait.qa34.CreateAccountTest"/>
         </classes>
     </test>
 
